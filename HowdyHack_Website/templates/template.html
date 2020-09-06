@@ -6,19 +6,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
     <title>Heatmap Presentation</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='imgs/HeatHeader.png')}}"> 
   <body>
     <div class="header-main">
       <div class="menu">
         <ul>
-          <li class="logo"><img src="{{ url_for('static', filename='DatBoi.png')}}"></li>
+          <li class="logo"><img src="{{ url_for('static', filename='imgs/DatBoi.png')}}"></li>
           <li><p>Home</p></li>
           <div class="vertical-line"></div>
           <li><p>About Us</p></li>
           <div class="vertical-line"></div>
           <li><p>Job Search</p></li>
         </ul>
+        <div class="menu"> 
+            <h1 class="company-title">Pedantic</h1> 
+        </div> 
         <ul class="floatright">
-          <li><img src="{{ url_for('static', filename='User.png')}}" class="AccountLogo"></li>
+          <li><img src="{{ url_for('static', filename='imgs/User.png')}}" class="AccountLogo"></li>
           <li><a href="#" class="LogIn">Account</a></li>
         </ul>
       </div>
@@ -34,16 +38,6 @@
 
         <div class="searchbox">
           <input type="text" placeholder="Job title or keyword">
-        </div>
-
-        <div class="dropdown">
-          <p>Please select where you live:</p>
-          <select name="opt">
-            <option value="a">Dallas</option>
-            <option value="b">Houston</option>
-            <option value="c">San Antonio</option>
-          </select>
-          <br>
         </div>
 
         <div class="radiobox">
@@ -63,47 +57,88 @@
           <input type="checkbox" id="range2" name="range2">
           <label for="range2"> $50,000 - $250,000</label><br>
           <input type="checkbox" id="range3" name="range3">
-          <label for="range3"> > $250,000</label><br><br>
+          <label for="range3"> > $250,000</label><br>
         </div>
+      </div>
+
+      <div class="dropdown"> 
+        <p>Please select where you live:</p> 
+        <select name="opt"> 
+          <option value="a">Dallas</option> 
+          <option value="b">Houston</option> 
+          <option value="c">San Antonio</option> 
+        </select><br>
+        </head>
       </div>
 
       <div class="spacer"></div>
 
       <div class="job-listings">
           <div class="job">
-            <img src="{{ url_for('static', filename='User.png')}}" class="jobImage">
+            <img src="{{ url_for('static', filename='imgs/ConstructionEngineer.png')}}" class="jobImage">
             <a href="#" class="jobTitle">Electrical Engineer</a>
-            <p>Salary</p>
+            <div class="salary"> 
+                <p>Salary: $36,080</p> 
+            </div>
+          </div>
+          <div class="jobType"> 
+            <p>Job Type: Form Setter</p> 
+          </div> 
+          <div class="jobDescription"> 
+            <p>Description: Pouring concrete then leveling<br> 
+              the concrete to the proper specifications</p> 
+          </div> 
+          <img src="{{ url_for('static', filename='imgs/LikeHeart.png')}}" class="likeImage"> 
+
+          <div class="job">
+            <img src="{{ url_for('static', filename='imgs/MechanicalEngineer.png')}}" class="jobImage"> 
+            <a href="#" class="jobTitle"><h3>Cisco</h3></a> 
+            <div class="salary"> 
+              <p>Salary: $253,000</p> 
+            </div> 
+            <div class="jobType"> 
+              <p>Job Type: Chief Financial Officer</p> 
+            </div> 
+            <div class="jobDescription"> 
+              <p>Description: the senior executive responsible <br> 
+                for managing the financial actions of a company</p> 
+            </div> 
+            <img src="{{ url_for('static', filename='imgs/LikeHeart.png')}}" class="likeImage"> 
           </div>
           <div class="job">
-              <img src="{{ url_for('static', filename='User.png')}}" class="jobImage">
-            <a href="#" class="jobTitle">Copmuter Science</a>
-            <p>Salary</p>
+            <img src="{{ url_for('static', filename='imgs/McDonalds.png')}}" class="jobImage"> 
+            <a href="#" class="jobTitle"><h3>McDonalds</h3></a> 
+            <div class="salary"> 
+              <p>Salary: $56,000</p> 
+            </div> 
+            <div class="jobType"> 
+              <p>Job Type: Operations Associate</p> 
+            </div> 
+            <div class="jobDescription"> 
+              <p>Description: Assist the Operations Manager<br> 
+                in completing clerical and administrative tasks</p> 
+            </div> 
+            <img src="{{ url_for('static', filename='imgs/LikeHeart.png')}}" class="likeImage">
           </div>
-          <div class="job">
-            <img src="{{ url_for('static', filename='User.png')}}" class="jobImage">
-            <a href="#" class="jobTitle">McDonalds</a>
-            <p>Salary</p>
-          </div>
-          <div class="job">
-            <img src="{{ url_for('static', filename='User.png')}}" class="jobImage">
-            <a href="#" class="jobTitle">Yard Service</a>
-            <p>Salary</p>
+          <div class="job"> 
+            <img src="{{ url_for('static', filename='imgs/LawnCare.png')}}" class="jobImage"> 
+            <a href="#" class="jobTitle"><h3>John Moore</h3></a> 
+            <div class="salary"> 
+              <p>Salary: $72,000</p> 
+            </div> 
+            <div class="jobType"> 
+              <p>Job Type: Pest Control</p> 
+            </div> 
+            <div class="jobDescription"> 
+              <p>Description:  remove unwanted creatures such as <br> 
+                rodents, insects, bugs, and ants from an infested environment</p> 
+            </div> 
+            <img src="{{ url_for('static', filename='imgs/LikeHeart.png')}}" class="likeImage">
           </div>
       </div>
 
       <div class="ads">
-        <div class="extra-image">
-          <img src="https://via.placeholder.com/150">
-        </div>
-
-        <div class="extra-image">
-          <img src="https://via.placeholder.com/150">
-        </div>
-
-        <div class="extra-image">
-          <img src="https://via.placeholder.com/150">
-        </div>
+        <img src="{{ url_for('static', filename='imgs/BannerAd.jpg')}}" class="ads"> 
       </div>
 
     </div>
