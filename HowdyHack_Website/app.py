@@ -54,6 +54,14 @@ def index():
 def heatmap_visualizer():
   return render_template("heatmap_visualizer.html")
 
+@app.route("/reset/")
+def reset():
+  global clicks_hm
+  global moves_hm
+  clicks_hm = HeatMap(grid_resolution)
+  moves_hm = HeatMap(grid_resolution)
+  return "HeatMap calculations were reset."
+
 @socketio.on('update heatmap')
 def update_heatmap(mouse_clicks, mouse_moves):
   global clicks_hm
