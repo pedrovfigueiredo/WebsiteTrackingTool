@@ -8,6 +8,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ url_for('static', filename='imgs/HeatHeader.png')}}"> 
   <body>
+    <div class="tabHeader">
+      <div class="checkboxActivate">
+        <div class="radioBox">
+          <div class="motionBox">
+            <input type="radio" id="motion" name="reset" value="motion">
+            <label for="motion" style:"display: inline">Track Motion</label><br>
+          </div>
+          <div class="clickBox">
+            <input type="radio" id="clicks" name="reset" value="clicks">
+            <label for="clicks" style:"display: inline">Track Clicks</label><br>
+          </div>
+        </div>
+        <div class="reset">
+          <input type="radio" id="reset" name="reset" value="reset">
+          <label for="reset"> reset</label><br>
+        </div>
+      </div>
+    </div>
     <div class="header-main">
       <div class="menu">
         <ul>
