@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html onclick="getClickPosition(event)" onmousemove="showCoords(event)" onmouseout="clearCoor()">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
     <title>Heatmap Presentation</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="icon" href="HeatHeader.png">
   <body>
 
     <div class="header-main">
@@ -18,6 +19,11 @@
           <div class="vertical-line"></div>
           <li><p>Job Search</p></li>
         </ul>
+      </div>
+      <div class="menu">
+        <h1 class="company-title">Pedantic</h1>
+      </div>
+      <div class="menu">
         <ul class="floatright">
           <li><img src="User.png" class="AccountLogo"></li>
           <li><a href="#" class="LogIn">Account</a></li>
@@ -27,24 +33,13 @@
 
     <div class="body-main">
       <div id="statement">
-        <p id="mouse_click"></p>
-        <p id="mouse_move"></p>
+        <p>Let us “work” out a job for you</p>
       </div>
 
       <div class="interactives">
 
         <div class="searchbox">
           <input type="text" placeholder="Job title or keyword">
-        </div>
-
-        <div class="dropdown">
-          <p>Please select where you live:</p>
-          <select name="opt">
-            <option value="a">Dallas</option>
-            <option value="b">Houston</option>
-            <option value="c">San Antonio</option>
-          </select>
-          <br>
         </div>
 
         <div class="radiobox">
@@ -64,7 +59,16 @@
           <input type="checkbox" id="range2" name="range2">
           <label for="range2"> $50,000 - $250,000</label><br>
           <input type="checkbox" id="range3" name="range3">
-          <label for="range3"> > $250,000</label><br><br>
+          <label for="range3"> > $250,000</label><br>
+        </div>
+
+        <div class="dropdown">
+          <p>Please select where you live:</p>
+          <select name="opt">
+            <option value="a">Dallas</option>
+            <option value="b">Houston</option>
+            <option value="c">San Antonio</option>
+          </select><br>
         </div>
       </div>
 
@@ -72,44 +76,78 @@
 
       <div class="job-listings">
           <div class="job">
-            <img src="User.png" class="jobImage">
-            <a href="#" class="jobTitle">Electrical Engineer</a>
-            <p>Salary</p>
+            <img src="ConstructionEngineer.png" class="jobImage">
+            <a href="#" class="jobTitle"><h3>Zachry Construction</h3></a>
+            <div class="salary">
+              <p>Salary: $36,080</p>
+            </div>
+            <div class="jobType">
+              <p>Job Type: Form Setter</p>
+            </div>
+            <div class="jobDescription">
+              <p>Description: Pouring concrete then leveling<br>
+                the concrete to the proper specifications</p>
+            </div>
+            <img src="LikeHeart.png" class="likeImage">
           </div>
           <div class="job">
-              <img src="User.png" class="jobImage">
-            <a href="#" class="jobTitle">Copmuter Science</a>
-            <p>Salary</p>
+              <img src="MechanicalEngineer.png" class="jobImage">
+            <a href="#" class="jobTitle"><h3>Cisco</h3></a>
+            <div class="salary">
+              <p>Salary: $253,000</p>
+            </div>
+            <div class="jobType">
+              <p>Job Type: Chief Financial Officer</p>
+            </div>
+            <div class="jobDescription">
+              <p>Description: the senior executive responsible <br>
+                for managing the financial actions of a company</p>
+            </div>
+            <img src="LikeHeart.png" class="likeImage">
           </div>
           <div class="job">
-            <img src="User.png" class="jobImage">
-            <a href="#" class="jobTitle">McDonalds</a>
-            <p>Salary</p>
+            <img src="McDonalds.png" class="jobImage">
+            <a href="#" class="jobTitle"><h3>McDonalds</h3></a>
+            <div class="salary">
+              <p>Salary: $56,000</p>
+            </div>
+            <div class="jobType">
+              <p>Job Type: Operations Associate</p>
+            </div>
+            <div class="jobDescription">
+              <p>Description: Assist the Operations Manager<br>
+                in completing clerical and administrative tasks</p>
+            </div>
+            <img src="LikeHeart.png" class="likeImage">
           </div>
           <div class="job">
-            <img src="User.png" class="jobImage">
-            <a href="#" class="jobTitle">Yard Service</a>
-            <p>Salary</p>
+            <img src="LawnCare.png" class="jobImage">
+            <a href="#" class="jobTitle"><h3>John Moore</h3></a>
+            <div class="salary">
+              <p>Salary: $72,000</p>
+            </div>
+            <div class="jobType">
+              <p>Job Type: Pest Control</p>
+            </div>
+            <div class="jobDescription">
+              <p>Description:  remove unwanted creatures such as <br>
+                rodents, insects, bugs, and ants from an infested environment</p>
+            </div>
+            <img src="LikeHeart.png" class="likeImage">
           </div>
       </div>
 
       <div class="ads">
-        <div class="extra-image">
-          <img src="https://via.placeholder.com/150">
-        </div>
-
-        <div class="extra-image">
-          <img src="https://via.placeholder.com/150">
-        </div>
-
-        <div class="extra-image">
-          <img src="https://via.placeholder.com/150">
-        </div>
+        <img src="BannerAd.jpg" class="ads">
       </div>
 
     </div>
 
-    <script src="js/frontend.js"></script>
+
+    <!-- <a href="">text</a> to link to website-->
+    <!-- adding target="_blank" opens in new tab-->
+    <!-- can put a button in hyperlink area-->
+    <!-- for images on computer save in file then refrence file name-->
   </body>
 
 </html>
