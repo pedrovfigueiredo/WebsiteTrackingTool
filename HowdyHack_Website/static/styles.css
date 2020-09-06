@@ -51,7 +51,11 @@
 
 .reset{
   float: right;
-  padding: 10px;
+  /* padding: 10px; */
+}
+
+#reset_button{
+  float: right;
 }
 
 .menu ul{
