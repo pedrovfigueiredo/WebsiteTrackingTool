@@ -20,9 +20,7 @@ This page will be for seeing the visualization
       // to the client. The data is then displayed in the "Received"
       // section of the page.
       socket.on('click data send', function(msg) {
-        console.log(msg);
-        $('#log').text(msg);
-
+        $('#log').html(msg);
       });
     });
   </script>

@@ -15,6 +15,13 @@ import re
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
+thread = None
+thread_lock = Lock()
+
+def bck(json):
+  while True:
+    socketio.sleep(2)
+    socketio.emit('click data send', json)
 
 # Setting up the page routing
 # front end client page and where mouse location will be recorded
@@ -31,30 +38,12 @@ def about():
 def contact():
   return render_template("contact.html")
 
-# handling the page events and sending necessary data to contact page
-'''@socketio.on('click data send')    #decorator to catch event called "my event"
-def handle_my_custom_event(json):  #This is event callback function triggers new event called "my response" which is able to be caught by another later callback
-  emit('click data recv', json)
-'''                    
 @socketio.on('click data recv')
 def handle_my_custom_event(json):
-  print(json)
-  emit('click data send', json)
+  global thread
+  with thread_lock:
+    if thread is None:
+      thread = socketio.start_background_task(bck(json))
 
 if __name__ == "__main__":
   app.run()
-
-"""
-@app.route("/hello/")
-@app.route("/hello/<name>")
-def hello_there(name = None):
-  return render_template(
-    "hello_there.html",
-    name=name,
-    date=datetime.now()
-  )
-
-@app.route("/api/data")
-def get_data():
-  return app.send_static_file("data.json")
-"""

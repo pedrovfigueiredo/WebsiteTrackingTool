@@ -11,24 +11,8 @@ Home
     $(document).ready(function() {
       
       var socket = io();
-
-      socket.emit('click data recv', 'I\'m connected!'});
+      socket.emit('click data recv', 'I\'m connected!');
       
-      // Event handler for new connections.
-      // The callback function is invoked when a connection with the
-      // server is established.
-     /* socket.on('connect', function() {
-        socket.emit('click data recv', {data: 'I\'m connected!'});
-      });*/
-
-      // Handlers for the different forms in the page.
-      // These accept data from the user and send it to the server in a
-      // variety of ways
-      /*$('form#emit').submit(function(event) {
-        socket.emit('click data recv', {data: $('#emit_data').val()});
-        return false;
-      });
-      */
     });
   </script>
 </body>
