@@ -69,8 +69,8 @@ def update_heatmap(mouse_clicks, mouse_moves):
   global thread_lock
   
   with thread_lock:
-    clicks_hm.add(mouse_clicks)
-    moves_hm.add(mouse_moves)
+    clicks_hm.add(json.loads(mouse_clicks))
+    moves_hm.add(json.loads(mouse_moves))
 
 @socketio.on('update window size')
 def update_window_size(dim):
@@ -78,8 +78,8 @@ def update_window_size(dim):
   global moves_hm
   global thread_lock
   with thread_lock:
-    clicks_hm.update_window_size(dim)
-    moves_hm.update_window_size(dim)
+    clicks_hm.update_window_size(json.loads(dim))
+    moves_hm.update_window_size(json.loads(dim))
 
 if __name__ == "__main__":
   app.run()
