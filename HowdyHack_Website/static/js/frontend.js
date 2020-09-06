@@ -1,6 +1,7 @@
 var socket = null;
 var mouse_clicks = [];
 var mouse_moves = [];
+var latest_mouse_location = null;
  
 function getClickPosition(e) {
   var xPosition = e.clientX;
@@ -12,7 +13,7 @@ function getClickPosition(e) {
     
   var coor = "Click Coordinates: (" + xPosition + ", " + yPosition + ")";
     
-  document.getElementById("mouse_click").innerHTML = coor;
+  // document.getElementById("mouse_click").innerHTML = coor;
 }
 
 function showCoords(event) {
@@ -21,13 +22,16 @@ function showCoords(event) {
   var w = document.documentElement.clientWidth;
   var h = document.documentElement.clientHeight;
 
-  mouse_moves.push([x / w, y / h]);
+  var l = [x / w, y / h];
+
+  latest_mouse_location = l;
+  mouse_moves.push(l);
   var coor = "Coordinates: (" + x + ", " + y +")";
-  document.getElementById("mouse_move").innerHTML = coor;
+  // document.getElementById("mouse_move").innerHTML = coor;
 }
 
 function clearCoor() {
-  document.getElementById("mouse_move").innerHTML = "";
+  // document.getElementById("mouse_move").innerHTML = "";
 }
 
 $(document).ready(function() {
@@ -40,6 +44,9 @@ $(document).ready(function() {
 
   setInterval(function() {
     console.log("Emit update heatmap");
+    if (latest_mouse_location != null && !mouse_moves.includes(latest_mouse_location)){
+      mouse_moves.push(latest_mouse_location);
+    }
     socket.emit("update heatmap", JSON.stringify(mouse_clicks), JSON.stringify(mouse_moves));
     
     mouse_clicks.length = 0;
