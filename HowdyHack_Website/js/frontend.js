@@ -7,16 +7,16 @@ function getClickPosition(e) {
     
     var coor = "Click Coordinates: (" + xPosition + ", " + yPosition + ") Click Amount: " + count;
     
-    document.getElementById("click").innerHTML = coor;
+    document.getElementById("mouse_click").innerHTML = coor;
 }
 
 function showCoords(event) {
   var x = event.clientX;
   var y = event.clientY;
   var coor = "Coordinates: (" + x + ", " + y +")";
-  document.getElementById("demo").innerHTML = coor;
+  document.getElementById("mouse_move").innerHTML = coor;
 }
 
 function clearCoor() {
-  document.getElementById("demo").innerHTML = "";
+  document.getElementById("mouse_move").innerHTML = "";
 }
