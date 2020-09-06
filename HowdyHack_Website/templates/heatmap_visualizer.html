@@ -1,0 +1,9 @@
+{% extends "template.html" %}
+{% block script %}
+<body>
+    <canvas id="myCanvas">
+        Your browser does not support the HTML canvas tag.
+    </canvas>
+    <script src="{{ url_for('static', filename='js/heatmap.js')}}"></script>
+</body>
+{% endblock %}
