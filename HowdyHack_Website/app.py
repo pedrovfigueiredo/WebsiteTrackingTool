@@ -15,14 +15,14 @@ import re
 from heatmap import HeatMap
 import json
 
-resolution = (50, 50)
+grid_resolution = (50, 50)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 thread_lock = Lock()
-clicks_hm = HeatMap(resolution)
-moves_hm = HeatMap(resolution)
+clicks_hm = HeatMap(grid_resolution)
+moves_hm = HeatMap(grid_resolution)
 
 def bck():
   global clicks_hm

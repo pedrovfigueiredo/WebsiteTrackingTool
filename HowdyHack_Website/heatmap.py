@@ -13,17 +13,14 @@ class HeatMap():
     def update(self):
         self.max = np.amax(self.m)
 
-    def add(self, new_inputs):
-        inputs = json.loads(new_inputs)
-        for i in inputs:
-            w_cell = math.floor(i[0] * self.m.shape[1])
-            h_cell = math.floor(i[1] * self.m.shape[0])
+    def add(self, new_inputs, step=1.0):
+        for i in new_inputs:
+            w_cell = math.floor(i[0] * (self.m.shape[1] - 1))
+            h_cell = math.floor(i[1] * (self.m.shape[0] - 1))
             self.m[h_cell, w_cell] += 1
-        
         self.update()
 
     def update_window_size(self, dim):
-        dim = json.loads(dim)
         w = dim[0]
         h = dim[1]
         self.m = cv2.resize(self.m, (h, w), interpolation=cv2.INTER_AREA)
