@@ -54,7 +54,7 @@ $(document).ready(function() {
             imgData.data[i] = rgb[0];
             imgData.data[i + 1] = rgb[1];
             imgData.data[i + 2] = rgb[2];
-            imgData.data[i + 3] = intensity != 0 ? 255 : intensity;
+            imgData.data[i + 3] = intensity == 0 ? 0 : Math.floor(intensity * 0.8) + 51; // 51 = 0.2 * 255
         }
 
         ctx1.putImageData(imgData, 0, 0);
