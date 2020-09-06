@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+Contact us
+{% endblock %}
+{% block content %}
+<p>Contact page for the Visual Studio Code Flask tutorial.</p>
+This page will be for seeing the visualization
+
+<body>
+  <title>Flask-SocketIO Test</title>
+  <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+
+      var socket = io();
+
+      // Event handler for server sent data.
+      // The callback function is invoked whenever the server emits data
+      // to the client. The data is then displayed in the "Received"
+      // section of the page.
+      socket.on('click data send', function(msg) {
+        $('#log').html(msg);
+      });
+    });
+  </script>
+</body>
+
+<h2>Receive:</h2>
+<div id="log"></div>
+
+{% endblock %}
