@@ -23,8 +23,16 @@ function rgbFromIntensity(intensity) {
 
 $(document).ready(function() {
     socket = io();
+    
+    $("#reset_button").click(function() {
+        console.log("entered reset_button");
+        socket.emit("reset data");
+        alert("HeatMap calculations were reset.");
+    });
+
     window.addEventListener("resize", updateWindowSize);
     updateWindowSize();
+
     
     // Updating the canvas
     socket.on("send heatmap", function(hms) {
