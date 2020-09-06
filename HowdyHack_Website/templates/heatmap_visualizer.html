@@ -1,4 +1,23 @@
 {% extends "template.html" %}
+{% block tab_header %}
+<body>
+    <div class="tabHeader">
+        <div class="checkboxActivate">
+          <div id="toggle_buttons" class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="motion" autocomplete="off" checked> Track Motion
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="clicks" autocomplete="off"> Track Clicks
+            </label>
+          </div>
+          <div class="reset">
+            <input type="button" id="reset_button" autocomplete="off"> Reset
+          </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
 {% block script %}
 <body>
     <canvas id="myCanvas">
